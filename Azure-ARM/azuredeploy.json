@@ -10,14 +10,14 @@
                 "2020 R2 Preview"
             ],
             "metadata": {
-                "description": "Version of the Profisee platform to use."
+                "description": "Version of the Profisee platform to use"
             }
         },
         "ProfiseeAdminUserAccount": {
             "defaultValue": "first.last@company.com",
             "type": "String",
             "metadata": {
-                "description": "Name of the account of the first super user who will be registered in the Profisee platform, who will be able to logon and add other users."
+                "description": "Name of the account of the first super user who will be registered in the Profisee platform. This user can log on and add other users."
             }
         },
         "ProfiseeLicense": {
@@ -29,14 +29,14 @@
         "ProfiseeACRUserName": {
             "type": "String",
             "metadata": {
-                "description": "User name supplied by Profisee support."
+                "description": "User name supplied by Profisee support. https://support.profisee.com"
             }
         },
         "ProfiseeACRPassword": {
             "defaultValue": "",
             "type": "String",
             "metadata": {
-                "description": "User password supplied by Profisee support."
+                "description": "User password supplied by Profisee support. https://support.profisee.com"
             }
         }, 
         "ActiveDirectoryCreateApp": {
@@ -47,33 +47,33 @@
                 "No"
             ],
             "metadata": {
-                "description": "The Active Directory App Registration will be created and configured.  If No, then you must supply an existing clientid and register the reply url manually.  example - https://profisee.company.com/profisee/auth/signin-microsoft"
+                "description": "If Yes, The Active Directory App Registration will be created and configured.  If No, you must supply an existing ClientID and register the Reply URL manually. Example: https://profisee.company.com/profisee/auth/signin-microsoft"
             }
         },
         "ActiveDirectoryClientId": {
             "defaultValue": "",
             "type": "String",
             "metadata": {
-                "description": "ClientId of existing Azure Active Directory App Registration which will be used by the profisee platform for authentication."
+                "description": "ClientID of the existing Azure Active Directory App Registration to be used by the Profisee platform for authentication"
             }
         },
          "ManagedIdentityName": {
             "type": "String",
             "metadata": {
-                "description": "Existing user assigned Managed Identity with contributer access at the subscription level or contributor access to the resoure group this is deployed to and the resource group the domain is in if updating dns.  If Active Directory Create Application is Yes, then it must also have Application Developer role in order to create and configure the azure active directory application."
+                "description": "The existing user who is assigned Managed Identity with contributor access at the subscription level or contributor access to the resource group this is deployed to (and the resource group the domain is in if updating DNS). If Create Active Directory Application is set to Yes, the user must also have the Application Developer role to create and configure the Azure Active Directory application."
             }
         },
          "ManagedIdentityResourceGroup": {
             "type": "String",
             "metadata": {
-                "description": "Resource group the managed identiy was created in."
+                "description": "Resource group the Managed Identity was created in"
             }
         },
         "KubernetesClusterName": {
             "defaultValue": "MyAKSCluster",
             "type": "String",
             "metadata": {
-                "description": "Name of the kubernetes cluster to create."
+                "description": "Name of the Kubernetes cluster to create"
             }
         },
         "KubernetesLinuxVMSize": {
@@ -419,7 +419,7 @@
                 "Standard_NV48s_v3"
             ],
             "metadata": {
-                "description": "Size of the VM to use for the linux node(s) in the kubernetes cluster."
+                "description": "Size of the VM to use for the Linux node(s) in the Kubernetes cluster"
             }
         },
         "KubernetesWindowsVMSize": {
@@ -765,7 +765,7 @@
                 "Standard_NV48s_v3"
             ],
             "metadata": {
-                "description": "Size of the VM to use for the Windows node(s) in the kubernetes cluster."
+                "description": "Size of the VM to use for the Windows node(s) in the Kubernetes cluster"
             }
         },
         "KubernetesVersion": {
@@ -779,7 +779,7 @@
                 "1.16.10"
             ],
             "metadata": {
-                "description": "Version of kubernetes to use."
+                "description": "Version of Kubernetes to use"
             }
         },
         "SQLServerCreateNew": {
@@ -790,14 +790,14 @@
                 "No"
             ],
             "metadata": {
-                "description": "If you select No, you must enter the FQDN of an existing sql server accessable by this azure subscription"
+                "description": "If No, you must enter the FQDN of an existing SQL Server accessible by this Azure subscription."
             }
         },
         "SQLServerName": {
             "defaultValue": "mysqlservername",
             "type": "String",
             "metadata": {
-                "description": "Enter a unique name.  Name must be lower case and be an available sqlserver name in azure.  SqlServerNames are globally unique in Azure"
+                "description": "Enter a unique server name.  Name must be lower case and must be an available SQL Server name in Azure.  SqlServerNames are globally unique in Azure."
             }
         },        
         "SQLServerUser": {
@@ -805,20 +805,20 @@
             "type": "string",
             "minLength": 1,
             "metadata": {
-                "description": "Administrator SQL login name to create with the new sql server or to use to connect to existing sql server."
+                "description": "Administrator SQL login name to create with the new sql server or to use to connect to existing sql server"
             }
         },
         "SQLServerPassword": {
             "type": "securestring",
             "metadata": {
-                "description": "Password for sql server user."
+                "description": "Password for SQL server user"
             }
         },
         "SQLServerDatabaseName": {
             "defaultValue": "Profisee",
             "type": "String",
             "metadata": {
-                "description": "Name of database to create and/or use."
+                "description": "Name of database to create and/or use"
             }
         },
         "StorageAccountCreateNew": {
@@ -829,21 +829,21 @@
                 "No"
             ],
             "metadata": {
-                "description": "If you select No, you must enter the information for an existing storage account including password.  If you choose Yes, password is not required and will be ignored."
+                "description": "If No, you must enter the information for an existing storage account including the password. If Yes, a password is automatically generated, and a chosen password will be ignored."
             }
         },
         "StorageAccountName": {
             "defaultValue": "mystorageaccountname",
             "type": "String",
             "metadata": {
-                "description": "Enter a unique name.  Name must be lowe case and be an available storage account name in azure.  Storage account names are globally unique in Azure"
+                "description": "Enter a unique storage account name. Name must be lower case and available in Azure. Storage account names are globally unique in Azure"
             }
         }, 
          "StorageAccountPassword": {
             "defaultValue":"",
             "type": "securestring",
             "metadata": {
-                "description": "Password for existing storage account."
+                "description": "Password for existing storage account"
             }
         },
         "StorageAccountType": {
@@ -864,7 +864,7 @@
             "defaultValue": "files",
             "type": "String",
             "metadata": {
-                "description": "Name of file share in the storage account to create and/or use."
+                "description": "Name of file share in the storage account to create or use"
             }
         },
         "DNSUpdate": {
@@ -875,28 +875,28 @@
                 "No"
             ],
             "metadata": {
-                "description": "If Yes then your dns zone must be in Azure.  If No then you have to update the dns record yourself.  Use the IP adress that is output from the InstallProfiseePlatform deploymnet step"
+                "description": "If Yes, your DNS zone must be in Azure.  If No, you must update the DNS record yourself. Use the IP adress that is output from the InstallProfiseePlatform deploymnet step."
             }
         },
         "DNSHostName": {
             "defaultValue": "myprofiseehostname",
             "type": "String",
             "metadata": {
-                "description": "Host name to use/create.  Required if updating DNS."
+                "description": "Host name to use or create. Required if updating DNS."
             }
         },
         "DNSDomainName": {
             "defaultValue": "mydomain.com",
             "type": "String",
             "metadata": {
-                "description": "Domain name name to use.  Required if updating DNS."
+                "description": "Domain name name to use. Required if updating DNS."
             }
         },
         "DNSDomainResourceGroup": {
             "defaultValue": "mydnszoneresourcegroup",
             "type": "String",
             "metadata": {
-                "description": "Resource group that the DNS zone (Domain name) is in.  Required if updating DNS."
+                "description": "Resource group that the DNS zone (Domain Name) is in. Required if updating DNS."
             }
         },   
         "HttpsConfigure": {
@@ -907,21 +907,21 @@
                 "No"
             ],
             "metadata": {
-                "description": "If Yes, then you must supply the certificate informtion.  If No then you web traffic is not secure and only works over http."
+                "description": "If Yes, you must supply the certificate informtion. If No, your web traffic is not secure and only works over HTTP."
             }
         }, 
         "HttpsCertificate": {
             "defaultValue": "",
             "type": "String",
             "metadata": {
-                "description": "Required if using Https.  Paste the text from TLS certificate. Starts with    -----BEGIN CERTIFICATE-----"
+                "description": "Required if using HTTPS. Paste the text from TLS certificate. Starts with -----BEGIN CERTIFICATE-----"
             }
         },
         "HttpsCertificatePrivateKey": {
             "defaultValue": "",
             "type": "String",
             "metadata": {
-                "description": "Required if using Https.  Paste the text from private key for your TLS certificate. Starts with    -----BEGIN PRIVATE KEY-----"
+                "description": "Required if using HTTPS. Paste the text from private key for your TLS certificate. Starts with -----BEGIN PRIVATE KEY-----"
             }
         }
     },
